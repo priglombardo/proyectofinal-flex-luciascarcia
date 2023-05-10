@@ -1,0 +1,151 @@
+/*GENERAL*/
+ul{list-style-type: none;display: flex;}
+form{display: flex;flex-direction: column;}
+li{padding: 10px;}
+a{text-decoration: none;color: black;transition: 1s all;font-family: Verdana, Geneva, Tahoma, sans-serif;}
+a:hover{
+    color: blue;
+    font-size: 20px;
+    background-color: rgb(128, 224, 31);
+    padding: 10px;
+    border-radius: 20px;
+}
+input:focus{
+    height: 50px;
+    font-size: 15px;
+    background-color: chartreuse;
+    color: blue;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+:root{
+    --bg-principal:lightgrey;
+    --f-s-p-desktop:30px;
+}
+header , footer{background-color: var(--bg-principal);}
+
+.grid{display: grid;
+grid-template-columns: 100%;
+grid-template-rows: repeat(3,auto);
+}
+.img-fluid{
+    width: 100%;
+    height: auto;
+    margin-bottom: 0;
+}
+/*bem*/
+body{margin: 1;}
+.pie{
+    display: flex;
+    justify-content: space-between;
+}
+/*elemento*/
+.encabezado__nav{font-size: 20px;}
+.contenido__img{grid-area:img ;}
+.contenido__titulo{grid-area:titulo ;}
+.contenido__pizq{grid-area:txti ;}
+.contenido_imgtxt{grid-area:imgp ;}
+.contenido__pder{grid-area:txtd ;}
+/*elementos promo*/
+.imgPrincipal{grid-area: imgPrincipal;}
+.Titulo{grid-area:Titulo;}
+.parrafoIzq{grid-area: pIzq;}
+.imgTexto{grid-area: imgP;}
+.parrafoDer{grid-area: pDer;}
+/*elementos productos*/
+.tituloProdutos{grid-area: tituloProdu;}
+.prodA{grid-area: prodA;}
+.prodB{grid-area: prodB;}
+.prodC{grid-area: prodC;}
+.prodD{grid-area: prodD;}
+.pro{background-color: rgb(175, 166, 167);padding: 5px;margin: 10px;border-radius: 20px;}
+h4{text-align: center;}
+/*elementos de contactos*/
+.encabezadoC{grid-area: encabezadoC;}
+.form{grid-area: form;}
+.infoContacto{grid-area: infoContacto;}
+.iframe{grid-area: iframe;}
+/*modificador*/
+.encabezado__nav--uppercase{text-transform: uppercase;}
+.contenido__titulo{text-align: center;}
+.p20{padding: 20px;}
+.mb20{padding-bottom: 20px;}
+h1{text-align: center;}
+/*MEDIA QUERIES*/
+/*DESKTOP*/
+@media (min-width:1024px){
+    .encabezado{
+        background-color: var(--bg-principal);
+        padding: 10px;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .contenido{
+        display: grid;
+        grid-template-areas: 
+        "img img img"
+        "titulo titulo titulo"
+        "txti imgp txtd";
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(3,auto);
+        grid-column-gap: 20px;
+    }
+    .gridMainPromo{
+        display: grid;
+        grid-template-areas: 
+        "imgPrincipal imgPrincipal imgPrincipal"
+        "Titulo Titulo Titulo"
+        "pIzq imgP pDer";
+        grid-template-columns: 33% 34% 33%;
+        grid-template-rows: auto auto auto;
+        align-items: center;
+        text-align: center;
+        padding: 10px;
+        font-size: larger;
+        margin-right: 1px;
+        justify-content: center;
+    }
+    .gridMainProductos{
+        display: grid;
+        grid-template-areas: 
+        "tituloProdu tituloProdu tituloProdu tituloProdu"
+        "prodA prodB prodC prodD";
+        grid-template-columns: repeat(4, 25%);
+        grid-template-rows: auto auto;
+    }
+    .gridMainContacto{
+        display: grid;
+        grid-template-areas: 
+        "encabezadoC encabezadoC"
+        "form infoContacto"
+        "form iframe";
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto auto auto;
+    }
+}
+/*Mobile*/
+@media(max-width:768px){
+    .encabezado, .pie{
+        background-color: var(--bg-principal);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .encabezado__nav{
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-left: 0;
+        font-size: 14px;
+    }
+    .contenido{
+        display: flex;
+        flex-direction: column;
+    }
+    .gridMainProductos{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
